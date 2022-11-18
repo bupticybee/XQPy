@@ -891,10 +891,10 @@ class Position():
         return (self.vlWhite if self.sdPlayer == 0 else self.vlBlack) > NULL_SAFE_MARGIN
 
     def inCheck(self):
-        return self.chkList[self.chkList.length - 1]
+        return self.chkList[len(self.chkList) - 1]
 
     def captured(self):
-        return self.pcList[self.pcList.length - 1] > 0
+        return self.pcList[len(self.pcList) - 1] > 0
 
     def repValue(self, vlRep):
         vlReturn = (0 if (vlRep & 2) == 0 else self.banValue()) + \
@@ -907,7 +907,7 @@ class Position():
         selfSide = False
         perpCheck = True
         oppPerpCheck = True
-        index = self.mvList.length - 1
+        index = len(self.mvList) - 1
         while self.mvList[index] > 0 and self.pcList[index] == 0:
             if selfSide:
                 perpCheck = perpCheck and self.chkList[index]
