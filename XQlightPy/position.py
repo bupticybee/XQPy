@@ -947,10 +947,11 @@ class Position():
         index -= 1
         while index >= 0 and BOOK_DAT[index][0] == lock:
             index -= 1
-        mvs = [], vls = []
+        mvs = []
+        vls = []
         value = 0
         index += 1
-        while index < BOOK_DAT.length and BOOK_DAT[index][0] == lock:
+        while index < len(BOOK_DAT) and BOOK_DAT[index][0] == lock:
             mv = BOOK_DAT[index][1]
             mv = (MIRROR_MOVE(mv) if mirror else mv)
             if self.legalMove(mv):

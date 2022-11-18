@@ -43,6 +43,8 @@ def test_pos_book():
          46244, 39594, 35498, 31402, 27306, 15018, 43434, 43178, 42922, 42666, 42410, 43946, 47786, 46019, 41923, 41924,
          42436, 41925, 42949, 47046, 47047, 47048, 42953, 43977, 43466, 43978, 48075, 43979]
     )
+    for i in range(100):
+        assert(pos.bookMove() != 0)
     pos_actions = pos.generateMoves(None)
     assert(len(pos_actions) == 44)
     assert(np.all(res_correct == np.asarray(pos_actions)))
