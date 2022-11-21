@@ -344,7 +344,7 @@ class Search:
         self.allNodes = 0
         self.pos.distance = 0
         t = time.time()
-        depth = 6
+        depth = 7
         for i in range(1,depth + 1):
             print("depth: ",i)
             vl = self.searchRoot(i)

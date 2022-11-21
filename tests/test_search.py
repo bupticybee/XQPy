@@ -23,5 +23,9 @@ def test_search_pos2():
     pos.fromFen("1nbakabnr/r8/1c5c1/p1p1p1p1p/9/9/P1P1P1P1P/1C5C1/4K3R/RNBA1ABN1 w - - 0 1")
     print(pos.zobristKey)
     search = Search(pos, 16)
-    mov = search.searchMain(64,100000)
+    mov = search.searchMain(64,1000000)
     print(mov)
+
+
+if __name__ == "__main__":
+    test_search_pos2()
