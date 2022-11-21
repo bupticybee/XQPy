@@ -552,7 +552,7 @@ class Position():
         zobristKey = self.zobristKey
         self.movePiece(mv)
         if (self.checked()):
-            self.undoMovePiece(mv)
+            self.undoMovePiece()
             return False
         self.keyList.append(zobristKey)
         self.changeSide()
@@ -567,7 +567,7 @@ class Position():
         self.keyList.pop()
         self.undoMovePiece()
 
-    def NoneMove(self):
+    def nullMove(self):
         self.mvList.append(0)
         self.pcList.append(0)
         self.keyList.append(self.zobristKey)
