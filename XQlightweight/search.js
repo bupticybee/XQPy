@@ -425,11 +425,8 @@ Search.prototype.searchMain = function(depth, millis) {
   this.allNodes = 0;
   this.pos.distance = 0;
   var t = new Date().getTime();
-  depth = 7
   for (var i = 1; i <= depth; i ++) {
-    console.log("depth: ",i)
     var vl = this.searchRoot(i);
-    console.log("value: ",vl)
     this.allMillis = new Date().getTime() - t;
     if (this.allMillis > millis) {
       break;
