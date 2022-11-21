@@ -33,7 +33,13 @@ while True:
         print("电脑的上一步：",move2Iccs(mov).replace("-","").lower())
     hintmov = search.searchMain(64, 10) # 搜索10毫秒，给出例子
     while True:
-        user_step = input("请输入你的行棋步子，比如 " + move2Iccs(hintmov).replace("-","").lower() + " :\n").upper()
+        user_step = input("请输入你的行棋步子，比如 " + move2Iccs(hintmov).replace("-","").lower() + " \n" + \
+                          "悔棋请输入 shameonme :\n").upper()
+        if user_step == "shameonme".upper():
+            mov = None
+            pos.undoMakeMove()
+            pos.undoMakeMove()
+            break
         if len(user_step) == 4:
             user_step = user_step[:2] + "-" + user_step[2:]
         try:
@@ -45,6 +51,7 @@ while True:
         pos.makeMove(user_move)
         break
 
-    # 电脑下棋
-    mov = search.searchMain(64, search_time_ms) # 搜索3秒钟
-    pos.makeMove(mov)
+    if user_step != "shameonme".upper():
+        # 电脑下棋
+        mov = search.searchMain(64, search_time_ms) # 搜索3秒钟
+        pos.makeMove(mov)
