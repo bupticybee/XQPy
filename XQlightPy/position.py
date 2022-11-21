@@ -796,9 +796,7 @@ class Position():
         elif switchcase == PIECE_KNIGHT:
             sqPin = KNIGHT_PIN(sqSrc, sqDst)
             return sqPin != sqSrc and self.squares[sqPin] == 0
-        elif switchcase == PIECE_ROOK:
-            pass
-        elif switchcase == PIECE_CANNON:
+        elif switchcase == PIECE_ROOK or switchcase == PIECE_CANNON:
             if SAME_RANK(sqSrc, sqDst):
                 delta = (-1 if sqDst < sqSrc else 1)
             elif SAME_FILE(sqSrc, sqDst):
