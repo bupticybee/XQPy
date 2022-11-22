@@ -59,6 +59,7 @@ while True:
             print("黑方胜利！行棋结束")
         elif winner == 2:
             print("和棋！行棋结束")
+        break
 
     if user_step != "shameonme".upper():
         # 电脑下棋
@@ -73,3 +74,4 @@ while True:
             print("黑方胜利！行棋结束")
         elif winner == 2:
             print("和棋！行棋结束")
+        break
