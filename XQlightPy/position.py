@@ -1,5 +1,4 @@
 import math
-import numpy as np
 import random
 from XQlightPy.book import BOOK_DAT
 
@@ -462,7 +461,7 @@ class RC4:
         n1 = self.nextByte()
         n2 = self.nextByte()
         n3 = self.nextByte()
-        return int(np.int32(n0 + (n1 << 8) + (n2 << 16) + ((n3 << 24) & 0xffffffff)))
+        return ((n0 + (n1 << 8) + (n2 << 16) + ((n3 << 24) & 0xffffffff)) + 2147483648) % 4294967296 - 2147483648
 
 
 PreGen_zobristKeyPlayer = None
