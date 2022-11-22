@@ -51,7 +51,25 @@ while True:
         pos.makeMove(user_move)
         break
 
+    winner = pos.winner()
+    if winner is not None:
+        if winner == 0:
+            print("红方胜利！行棋结束")
+        elif winner == 1:
+            print("黑方胜利！行棋结束")
+        elif winner == 2:
+            print("和棋！行棋结束")
+
     if user_step != "shameonme".upper():
         # 电脑下棋
         mov = search.searchMain(64, search_time_ms) # 搜索3秒钟
         pos.makeMove(mov)
+
+    winner = pos.winner()
+    if winner is not None:
+        if winner == 0:
+            print("红方胜利！行棋结束")
+        elif winner == 1:
+            print("黑方胜利！行棋结束")
+        elif winner == 2:
+            print("和棋！行棋结束")

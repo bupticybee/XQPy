@@ -969,3 +969,35 @@ class Position():
     def historyIndex(self,mv):
         return ((self.squares[SRC(mv)] - 8) << 8) + DST(mv)
 
+
+    def winner(self):
+        if self.isMate():
+            return 1 - self.sdPlayer
+        pc = SIDE_TAG(self.sdPlayer) + PIECE_KING
+        sqMate = 0
+        for sq in range(256):
+            if self.squares[sq] == pc:
+                sqMate = sq
+                break
+        if sqMate == 0:
+            return 1 - self.sdPlayer
+
+        vlRep = self.repStatus(3)
+        if (vlRep > 0):
+            vlRep = self.repValue(vlRep)
+            if -WIN_VALUE < vlRep < WIN_VALUE:
+                #双方不变作和
+                return 2
+            else:
+                #长打作负
+                return self.sdPlayer
+
+        hasMaterial = False
+        for sq in range(256):
+            if IN_BOARD(sq) and (self.squares[sq] & 7) > 2:
+                hasMaterial = True
+                break;
+        if (not hasMaterial) :
+            # 无进攻子力做和
+            return 2
+        return
