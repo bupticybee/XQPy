@@ -6,7 +6,7 @@ XQpy，简单而强的纯python中国象棋引擎
 XQpy ，实现了一个很强的中国象棋ai，所有逻辑均使用python实现。
 总代码量只有1000多行，适合爱好者进行搜索算法学习和魔改，以及整合进其他系统。
 
-XQpy 是象棋巫师[XQlightweight](https://github.com/xqbase/xqwlight) 的非官方python版本，是著名象棋引擎[eleeye](https://github.com/xqbase/eleeye)的轻量版本。
+XQpy 是象棋巫师[XQlightweight](https://github.com/xqbase/xqwlight) 的非官方python版本，是著名象棋引擎[象眼eleeye](https://github.com/xqbase/eleeye)的轻量版本。
 
 ## 使用
 
